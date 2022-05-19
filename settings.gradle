@@ -14,5 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "WebWordCount"
 include ':app'
-include ':networkdatamodule'
-include ':databasemodule'

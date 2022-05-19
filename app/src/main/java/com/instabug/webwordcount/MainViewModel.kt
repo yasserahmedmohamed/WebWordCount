@@ -1,4 +1,6 @@
 package com.instabug.webwordcount
 
-class MainViewModel {
+import androidx.lifecycle.ViewModel
+
+class MainViewModel:ViewModel() {
 }
