@@ -3,4 +3,6 @@
     <string name="android_challenge">Android Challenge</string>
     <string name="search_in_words">search in words</string>
     <string name="sort_words">sort words</string>
+    <string name="loading">Loading...</string>
+    <string name="no_internt_connection">No internet connection</string>
 </resources>

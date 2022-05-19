@@ -12,7 +12,7 @@ import java.util.concurrent.Executors
 import java.util.concurrent.Future
 
 
-object NetworkService {
+object WebWordsRepository {
 
 
     fun getData():ArrayList<String>{
@@ -31,7 +31,7 @@ object NetworkService {
     }
 
 
-    class TestTask : Callable<String> {
+   private class TestTask : Callable<String> {
         override fun call(): String {
             val x =  HtmlCompat.fromHtml(
                 fetchSiteData(),
@@ -43,7 +43,7 @@ object NetworkService {
 
     }
 
-    fun fetchSiteData():String{
+   private fun fetchSiteData():String{
         var res =""
         run {
             try {
