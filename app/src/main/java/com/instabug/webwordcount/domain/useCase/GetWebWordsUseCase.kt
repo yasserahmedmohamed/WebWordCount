@@ -10,7 +10,7 @@ class GetWebWordsUseCase {
         val mappedWordList = ArrayList<WordWithCount>()
         data.forEach { word->
             val indexOfWordInMappedList = mappedWordList.indexOfFirst { wordWithCount ->
-            word.equals(wordWithCount.name)
+            word.lowercase().equals(wordWithCount.name.lowercase())
             }
             if (indexOfWordInMappedList!=-1){
                 mappedWordList.get(indexOfWordInMappedList).count++

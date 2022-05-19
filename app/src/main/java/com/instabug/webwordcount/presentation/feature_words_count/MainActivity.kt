@@ -7,6 +7,7 @@ import android.net.NetworkCapabilities
 import android.net.NetworkRequest
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
@@ -95,25 +96,33 @@ class MainActivity : BaseActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if (item.itemId == R.id.sort){
+            viewModel.sortList()
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
 
    private fun setSearchViewCallBacks() {
         if (this::searchView.isInitialized) {
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(p0: String?): Boolean {
-                    Toast.makeText(this@MainActivity, p0, Toast.LENGTH_SHORT).show()
                     return false
                 }
 
                 override fun onQueryTextChange(p0: String?): Boolean {
-                    Toast.makeText(this@MainActivity, p0, Toast.LENGTH_SHORT).show()
+                    p0?.let { viewModel.searchInWords(it) }
                     return false
                 }
 
             })
 
             searchView.setOnCloseListener {
-                // return to view model to return all words
-                true
+              viewModel.showAllWords()
+                false
             }
         }
     }
