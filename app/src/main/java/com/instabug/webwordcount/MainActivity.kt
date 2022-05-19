@@ -12,13 +12,8 @@ import android.view.Menu
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.text.HtmlCompat
-import com.instabug.webwordcount.Utils.isOnline
+import com.instabug.networkmodule.NetworkService
 import com.instabug.webwordcount.databinding.ActivityMainBinding
-import java.util.concurrent.Callable
-import java.util.concurrent.Executors
-import java.util.concurrent.Future
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -58,9 +53,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-//        val data = getData()
+        val data = NetworkService.getData()
 
-//        Log.e("tEST_DATA",data)
+        Log.e("tEST_DATA",data.toString())
 
     }
 
@@ -106,21 +101,5 @@ class MainActivity : AppCompatActivity() {
 
 
 
-//    fun getData():String{
-//        val pool = Executors.newCachedThreadPool()
-//        val future: Future<String> = pool.submit(TestTask())
-//        return future.get()
-//    }
-//
-//
-//    class TestTask : Callable<String> {
-//        override fun call(): String {
-//            val url = "https://instabug.com/"
-//            return HtmlCompat.fromHtml(
-//                NetworkCalls.fetchSiteData(url).split("<body>")[1].split("</body>")[0],
-//                HtmlCompat.FROM_HTML_MODE_LEGACY
-//            ).toString()
-//        }
-//
-//    }
+
 }
