@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WebWordCount</string>
+    <string name="app_name">Android Challenge</string>
     <string name="android_challenge">Android Challenge</string>
     <string name="search_in_words">search in words</string>
     <string name="sort_words">sort words</string>
